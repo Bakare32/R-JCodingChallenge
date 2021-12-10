@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		046A66C82763EF1500D78A99 /* CompetitionModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 046A66C62763EF1500D78A99 /* CompetitionModel.xcdatamodeld */; };
+		046A66D32763F1FC00D78A99 /* CompetitionModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A66D12763F1FC00D78A99 /* CompetitionModel+CoreDataClass.swift */; };
+		046A66D42763F1FC00D78A99 /* CompetitionModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A66D22763F1FC00D78A99 /* CompetitionModel+CoreDataProperties.swift */; };
+		046A66D82763F50500D78A99 /* LeagueModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A66D62763F50500D78A99 /* LeagueModel+CoreDataClass.swift */; };
+		046A66D92763F50500D78A99 /* LeagueModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A66D72763F50500D78A99 /* LeagueModel+CoreDataProperties.swift */; };
 		047508492762AA9700927241 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047508482762AA9700927241 /* AppDelegate.swift */; };
 		0475084B2762AA9700927241 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475084A2762AA9700927241 /* SceneDelegate.swift */; };
 		0475084D2762AA9700927241 /* CompetitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475084C2762AA9700927241 /* CompetitionsViewController.swift */; };
@@ -16,9 +21,23 @@
 		0475085D2762AE8500927241 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475085C2762AE8500927241 /* CustomCollectionViewCell.swift */; };
 		0475085F2762BF9600927241 /* LeagueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475085E2762BF9600927241 /* LeagueViewController.swift */; };
 		047508612762C6A100927241 /* LeagueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047508602762C6A100927241 /* LeagueCollectionViewCell.swift */; };
+		047508692762D33400927241 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047508682762D33400927241 /* NetworkService.swift */; };
+		0475086B2762D34100927241 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475086A2762D34100927241 /* AppError.swift */; };
+		0475086D2762D34C00927241 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475086C2762D34C00927241 /* Method.swift */; };
+		0475086F2762D35C00927241 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475086E2762D35C00927241 /* Route.swift */; };
+		047508732762D3B500927241 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047508722762D3B500927241 /* String+extension.swift */; };
+		047508752762D46900927241 /* PremierModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047508742762D46900927241 /* PremierModel.swift */; };
+		047508772762D9F800927241 /* LeagueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047508762762D9F800927241 /* LeagueViewModel.swift */; };
+		047508792762EF3600927241 /* AllCompetition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047508782762EF3600927241 /* AllCompetition.swift */; };
+		E94396F44D9B31353A1E8DCC /* Pods_R_JCodingChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329A3E3D2A0D981BBF03901D /* Pods_R_JCodingChallenge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		046A66C72763EF1500D78A99 /* CompetitionModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CompetitionModel.xcdatamodel; sourceTree = "<group>"; };
+		046A66D12763F1FC00D78A99 /* CompetitionModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompetitionModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		046A66D22763F1FC00D78A99 /* CompetitionModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompetitionModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		046A66D62763F50500D78A99 /* LeagueModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LeagueModel+CoreDataClass.swift"; path = "R&JCodingChallenge/LeagueCoreData/LeagueModel+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		046A66D72763F50500D78A99 /* LeagueModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LeagueModel+CoreDataProperties.swift"; path = "R&JCodingChallenge/LeagueCoreData/LeagueModel+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		047508452762AA9700927241 /* R&JCodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "R&JCodingChallenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		047508482762AA9700927241 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0475084A2762AA9700927241 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +49,17 @@
 		0475085C2762AE8500927241 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		0475085E2762BF9600927241 /* LeagueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueViewController.swift; sourceTree = "<group>"; };
 		047508602762C6A100927241 /* LeagueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueCollectionViewCell.swift; sourceTree = "<group>"; };
+		047508682762D33400927241 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		0475086A2762D34100927241 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		0475086C2762D34C00927241 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
+		0475086E2762D35C00927241 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		047508722762D3B500927241 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
+		047508742762D46900927241 /* PremierModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremierModel.swift; sourceTree = "<group>"; };
+		047508762762D9F800927241 /* LeagueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueViewModel.swift; sourceTree = "<group>"; };
+		047508782762EF3600927241 /* AllCompetition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCompetition.swift; sourceTree = "<group>"; };
+		329A3E3D2A0D981BBF03901D /* Pods_R_JCodingChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_R_JCodingChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86AB3B733A8345374F451205 /* Pods-R&JCodingChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R&JCodingChallenge.release.xcconfig"; path = "Target Support Files/Pods-R&JCodingChallenge/Pods-R&JCodingChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		EF24DEBB0BD054175D77F152 /* Pods-R&JCodingChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R&JCodingChallenge.debug.xcconfig"; path = "Target Support Files/Pods-R&JCodingChallenge/Pods-R&JCodingChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +67,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E94396F44D9B31353A1E8DCC /* Pods_R_JCodingChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		046A66D52763F20E00D78A99 /* CompetitionCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				046A66D12763F1FC00D78A99 /* CompetitionModel+CoreDataClass.swift */,
+				046A66D22763F1FC00D78A99 /* CompetitionModel+CoreDataProperties.swift */,
+			);
+			path = CompetitionCoreData;
+			sourceTree = "<group>";
+		};
+		046A66DA2763F51400D78A99 /* LeagueCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				046A66D72763F50500D78A99 /* LeagueModel+CoreDataProperties.swift */,
+				046A66D62763F50500D78A99 /* LeagueModel+CoreDataClass.swift */,
+			);
+			path = LeagueCoreData;
+			sourceTree = "<group>";
+		};
 		0475083C2762AA9700927241 = {
 			isa = PBXGroup;
 			children = (
 				047508472762AA9700927241 /* R&JCodingChallenge */,
 				047508462762AA9700927241 /* Products */,
+				4613C20705804EBD7AA94425 /* Pods */,
+				62D8DC83E608309448937EE8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +113,8 @@
 		047508472762AA9700927241 /* R&JCodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				046A66DA2763F51400D78A99 /* LeagueCoreData */,
+				046A66D52763F20E00D78A99 /* CompetitionCoreData */,
 				047508482762AA9700927241 /* AppDelegate.swift */,
 				0475084A2762AA9700927241 /* SceneDelegate.swift */,
 				0475084C2762AA9700927241 /* CompetitionsViewController.swift */,
@@ -72,8 +125,34 @@
 				0475085C2762AE8500927241 /* CustomCollectionViewCell.swift */,
 				0475085E2762BF9600927241 /* LeagueViewController.swift */,
 				047508602762C6A100927241 /* LeagueCollectionViewCell.swift */,
+				047508682762D33400927241 /* NetworkService.swift */,
+				0475086A2762D34100927241 /* AppError.swift */,
+				0475086C2762D34C00927241 /* Method.swift */,
+				0475086E2762D35C00927241 /* Route.swift */,
+				047508722762D3B500927241 /* String+extension.swift */,
+				047508742762D46900927241 /* PremierModel.swift */,
+				047508762762D9F800927241 /* LeagueViewModel.swift */,
+				047508782762EF3600927241 /* AllCompetition.swift */,
+				046A66C62763EF1500D78A99 /* CompetitionModel.xcdatamodeld */,
 			);
 			path = "R&JCodingChallenge";
+			sourceTree = "<group>";
+		};
+		4613C20705804EBD7AA94425 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF24DEBB0BD054175D77F152 /* Pods-R&JCodingChallenge.debug.xcconfig */,
+				86AB3B733A8345374F451205 /* Pods-R&JCodingChallenge.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		62D8DC83E608309448937EE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				329A3E3D2A0D981BBF03901D /* Pods_R_JCodingChallenge.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 047508592762AA9B00927241 /* Build configuration list for PBXNativeTarget "R&JCodingChallenge" */;
 			buildPhases = (
+				4F2831ADF55412AC3C2AAE58 /* [CP] Check Pods Manifest.lock */,
 				047508412762AA9700927241 /* Sources */,
 				047508422762AA9700927241 /* Frameworks */,
 				047508432762AA9700927241 /* Resources */,
+				FB2D96D6D98EC79025EE4331 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -142,6 +223,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4F2831ADF55412AC3C2AAE58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-R&JCodingChallenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB2D96D6D98EC79025EE4331 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-R&JCodingChallenge/Pods-R&JCodingChallenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-R&JCodingChallenge/Pods-R&JCodingChallenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-R&JCodingChallenge/Pods-R&JCodingChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		047508412762AA9700927241 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -150,9 +273,22 @@
 				0475084D2762AA9700927241 /* CompetitionsViewController.swift in Sources */,
 				047508612762C6A100927241 /* LeagueCollectionViewCell.swift in Sources */,
 				047508492762AA9700927241 /* AppDelegate.swift in Sources */,
+				0475086F2762D35C00927241 /* Route.swift in Sources */,
+				047508772762D9F800927241 /* LeagueViewModel.swift in Sources */,
 				0475084B2762AA9700927241 /* SceneDelegate.swift in Sources */,
+				046A66C82763EF1500D78A99 /* CompetitionModel.xcdatamodeld in Sources */,
+				047508732762D3B500927241 /* String+extension.swift in Sources */,
+				0475086B2762D34100927241 /* AppError.swift in Sources */,
+				046A66D42763F1FC00D78A99 /* CompetitionModel+CoreDataProperties.swift in Sources */,
 				0475085F2762BF9600927241 /* LeagueViewController.swift in Sources */,
+				047508792762EF3600927241 /* AllCompetition.swift in Sources */,
 				0475085D2762AE8500927241 /* CustomCollectionViewCell.swift in Sources */,
+				046A66D92763F50500D78A99 /* LeagueModel+CoreDataProperties.swift in Sources */,
+				047508692762D33400927241 /* NetworkService.swift in Sources */,
+				046A66D82763F50500D78A99 /* LeagueModel+CoreDataClass.swift in Sources */,
+				047508752762D46900927241 /* PremierModel.swift in Sources */,
+				0475086D2762D34C00927241 /* Method.swift in Sources */,
+				046A66D32763F1FC00D78A99 /* CompetitionModel+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +432,7 @@
 		};
 		0475085A2762AA9B00927241 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF24DEBB0BD054175D77F152 /* Pods-R&JCodingChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -324,6 +461,7 @@
 		};
 		0475085B2762AA9B00927241 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86AB3B733A8345374F451205 /* Pods-R&JCodingChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -372,6 +510,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		046A66C62763EF1500D78A99 /* CompetitionModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				046A66C72763EF1500D78A99 /* CompetitionModel.xcdatamodel */,
+			);
+			currentVersion = 046A66C72763EF1500D78A99 /* CompetitionModel.xcdatamodel */;
+			path = CompetitionModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0475083D2762AA9700927241 /* Project object */;
 }

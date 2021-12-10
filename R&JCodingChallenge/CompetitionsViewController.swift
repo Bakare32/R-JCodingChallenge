@@ -6,13 +6,16 @@
 //
 
 import UIKit
+import CoreData
 
 class CompetitionsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
    
     
-
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var collectionView: UICollectionView?
     
+    var listOfCompletition: [CompetitionModel] = []
+    var list: LeagueViewModel?
     let pageTitleLabel: UILabel = {
       let label = UILabel()
       label.text = "Competitions"
@@ -33,6 +36,24 @@ class CompetitionsViewController: UIViewController, UICollectionViewDelegate, UI
         navigationController?.navigationBar.isHidden = true
         setupCollectionView()
         setUpConstraint()
+        getAllItems()
+        
+        NetworkService.shared.getAllCompetitions { [weak self] result in
+            switch result {
+                
+            case .success(let data):
+//                print("The data is \(data.competitions)")
+//                self?.listOfCompletition = data.competitions
+//                self?.collectionView?.reloadData()
+                for index in data.competitions {
+                    self?.createItem(with: index)
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        
     }
 
     func setupCollectionView() {
@@ -55,12 +76,14 @@ class CompetitionsViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return listOfCompletition.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath)
-        cell.backgroundColor = .gray
+        let item = listOfCompletition[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
+        cell.backgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1.00)
+        cell.configure(with: LeagueViewModel(with: item) )
         return cell
     }
     
@@ -85,6 +108,35 @@ class CompetitionsViewController: UIViewController, UICollectionViewDelegate, UI
             pageTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
+    }
+    
+    func getAllItems() {
+        do {
+            listOfCompletition = try context.fetch(CompetitionModel.fetchRequest())
+                DispatchQueue.main.async {
+                    self.collectionView?.reloadData()
+                }
+            
+        }
+        catch {
+            
+        }
+       
+    }
+    
+    func createItem(with Model: Compete) {
+        let newItem = CompetitionModel(context: context)
+        newItem.name = Model.name
+        newItem.country = Model.area.name
+        newItem.date = Model.currentSeason?.startDate
+        
+        do {
+            try context.save()
+            getAllItems()
+        }
+        catch {
+            
+        }
     }
     
 

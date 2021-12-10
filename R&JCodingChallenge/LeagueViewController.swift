@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import CoreData
 
 class LeagueViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     
-
+//    var teamsName: LeagueViewModel?
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var items: [LeagueModel] = []
     private let topBackArrowButton: UIButton = {
       let button = UIButton()
       button.addTarget(self, action: #selector(didTapTopBackArrowButton), for: .touchUpInside)
@@ -33,13 +37,26 @@ class LeagueViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     private var leagueCollectionView: UICollectionView?
     
+    var usedId = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .systemGreen
         setupCollectionView()
         setConstraint()
-        
+        getAllItems()
+        NetworkService.shared.getPl { [weak self] result in
+            switch result {
+                
+            case .success(let data):
+                for index in data.teams {
+                    self?.createItem(with: index)
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     func setupCollectionView() {
@@ -86,13 +103,45 @@ class LeagueViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LeagueCollectionViewCell.identifier, for: indexPath)
-        cell.backgroundColor = .blue
+        let item = items [indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LeagueCollectionViewCell.identifier, for: indexPath) as! LeagueCollectionViewCell
+        cell.backgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1.00)
+        if ((item.imageUrl?.contains("svg")) != nil) {
+            cell.configure(with: item.imageUrl ?? "")
+        } else {
+            cell.setUp(with: item.imageUrl ?? "")
+        }
         return cell
     }
 
+    func getAllItems() {
+        do {
+            items = try context.fetch(LeagueModel.fetchRequest())
+                DispatchQueue.main.async {
+                    self.leagueCollectionView?.reloadData()
+                }
+            
+        }
+        catch {
+            
+        }
+       
+    }
+    
+    func createItem(with Model: Team) {
+        let newItem = LeagueModel(context: context)
+        newItem.imageUrl = Model.crestURL
+        do {
+            try context.save()
+            getAllItems()
+        }
+        catch {
+            
+        }
+    }
+    
 }

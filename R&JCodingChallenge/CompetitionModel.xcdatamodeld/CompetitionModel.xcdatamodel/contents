@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="20G224" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CompetitionModel" representedClassName="CompetitionModel" syncable="YES">
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="LeagueModel" representedClassName="LeagueModel" syncable="YES">
+        <attribute name="imageUrl" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="CompetitionModel" positionX="-54" positionY="-9" width="128" height="74"/>
+        <element name="LeagueModel" positionX="-36" positionY="36" width="128" height="44"/>
+    </elements>
+</model>

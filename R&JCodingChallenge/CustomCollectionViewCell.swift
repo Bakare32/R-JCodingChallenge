@@ -11,9 +11,16 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "CustomCollectionViewCell"
     
+    func configure(with model: LeagueViewModel) {
+        myLabel1.text = model.league
+        myLabel2.text = model.country
+        myLabel4.text = model.date
+    }
+    
     private let myLabel1: UILabel = {
         let label = UILabel()
         label.text = "Premier League"
+        label.font = UIFont(name: "Helvetica-bold", size: 15)
 //        label.backgroundColor = .red
         label.textAlignment = .center
         return label
@@ -22,6 +29,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
     private let myLabel2: UILabel = {
         let label = UILabel()
         label.text = "Country"
+        label.font = UIFont(name: "Helvetica-regular", size: 15)
 //        label.backgroundColor = .green
         label.textAlignment = .center
         return label
@@ -38,6 +46,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
     private let myLabel4: UILabel = {
         let label = UILabel()
         label.text = "02-10-2020"
+        label.font = UIFont(name: "Helvetica-thin", size: 15)
 //        label.backgroundColor = .yellow
 //        label.textAlignment = .center
         return label
