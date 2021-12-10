@@ -30,6 +30,9 @@ class CompetitionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGreen
+//        navigationController?.navigationBar.backgroundColor = .systemGreen
+//        title = "Competitions"
+        
         navigationController?.navigationBar.isHidden = true
         setupCollectionView()
         setUpConstraint()
@@ -39,6 +42,9 @@ class CompetitionsViewController: UIViewController {
             switch result {
                 
             case .success(let data):
+//                print("The data is \(data.competitions)")
+//                self?.listOfCompletition = data.competitions
+//                self?.collectionView?.reloadData()
                 for index in data.competitions {
                     self?.createItem(with: index)
                 }
@@ -66,6 +72,7 @@ class CompetitionsViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         view.addSubview(collectionView)
+//        collectionView.frame = CGRect(x: 10, y: view.frame.size.height-50, width: view.frame.size.width-10, height: 50)
     }
     
     
@@ -118,3 +125,28 @@ class CompetitionsViewController: UIViewController {
 }
 
 
+extension UIView {
+    func anchorToTop(top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil) {
+        anchorWithConstantsToTop(top: top, left: left, bottom: bottom, right: right, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0)
+    }
+    func anchorWithConstantsToTop(top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil,
+                                  bottom: NSLayoutYAxisAnchor? = nil,
+                                  right: NSLayoutXAxisAnchor? = nil,
+                                  topConstant: CGFloat = 0,
+                                  leftConstant: CGFloat = 0,
+                                  bottomConstant: CGFloat = 0, rightConstant: CGFloat = 0) {
+        translatesAutoresizingMaskIntoConstraints = false
+        if let top = top {
+            topAnchor.constraint(equalTo: top, constant: topConstant).isActive = true
+        }
+        if let bottom = bottom {
+            bottomAnchor.constraint(equalTo: bottom, constant: -bottomConstant).isActive = true
+        }
+        if let left = left {
+            leftAnchor.constraint(equalTo: left, constant: leftConstant).isActive = true
+        }
+        if let right = right {
+            rightAnchor.constraint(equalTo: right, constant: -rightConstant).isActive = true
+        }
+    }
+}

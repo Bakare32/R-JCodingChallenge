@@ -6,15 +6,12 @@
 //
 
 import UIKit
-import CoreData
 
-class LeagueViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class LeagueViewController: UIViewController {
     
     
-//    var teamsName: LeagueViewModel?
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var items: [LeagueModel] = []
+    var items: [Team] = []
     private let topBackArrowButton: UIButton = {
       let button = UIButton()
       button.addTarget(self, action: #selector(didTapTopBackArrowButton), for: .touchUpInside)
@@ -45,13 +42,20 @@ class LeagueViewController: UIViewController, UICollectionViewDelegate, UICollec
         view.backgroundColor = .systemGreen
         setupCollectionView()
         setConstraint()
-        getAllItems()
         NetworkService.shared.getPl { [weak self] result in
             switch result {
                 
             case .success(let data):
+//                print("the data is \(data.teams)")
+                self?.items = data.teams
+//                let used = User()
                 for index in data.teams {
-                    self?.createItem(with: index)
+//                    print("the index is \(index.crestURL)")
+                    self?.usedId = index.crestURL
+                    print("The used url is \(self?.usedId ?? "")")
+                    let defaults = UserDefaults.standard
+                    defaults.setValue(self?.usedId, forKey: "url")
+                    self?.leagueCollectionView?.reloadData()
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -102,54 +106,6 @@ class LeagueViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
-    }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = items [indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LeagueCollectionViewCell.identifier, for: indexPath) as! LeagueCollectionViewCell
-        cell.backgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1.00)
-        if ((item.imageUrl?.contains("svg")) != nil) {
-            cell.configure(with: item.imageUrl ?? "")
-        } else {
-            cell.setUp(with: item.imageUrl ?? "")
-        }
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == leagueCollectionView {
-            print("Hello")
-            let newVc = DetailsViewController()
-            navigationController?.pushViewController(newVc, animated: true)
-        }
-    }
 
-    func getAllItems() {
-        do {
-            items = try context.fetch(LeagueModel.fetchRequest())
-                DispatchQueue.main.async {
-                    self.leagueCollectionView?.reloadData()
-                }
-            
-        }
-        catch {
-            
-        }
-       
-    }
-    
-    func createItem(with Model: Team) {
-        let newItem = LeagueModel(context: context)
-        newItem.imageUrl = Model.crestURL
-        do {
-            try context.save()
-            getAllItems()
-        }
-        catch {
-            
-        }
-    }
-    
 }

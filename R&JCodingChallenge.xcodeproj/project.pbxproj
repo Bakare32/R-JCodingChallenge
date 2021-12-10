@@ -14,6 +14,7 @@
 		046A66D92763F50500D78A99 /* LeagueModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A66D72763F50500D78A99 /* LeagueModel+CoreDataProperties.swift */; };
 		046A66DC2763F98800D78A99 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A66DB2763F98800D78A99 /* DetailsViewController.swift */; };
 		046A66E42763FBA000D78A99 /* Competition+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A66E32763FBA000D78A99 /* Competition+extension.swift */; };
+		046A66E62763FCF600D78A99 /* League+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A66E52763FCF600D78A99 /* League+extension.swift */; };
 		047508492762AA9700927241 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047508482762AA9700927241 /* AppDelegate.swift */; };
 		0475084B2762AA9700927241 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475084A2762AA9700927241 /* SceneDelegate.swift */; };
 		0475084D2762AA9700927241 /* CompetitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475084C2762AA9700927241 /* CompetitionsViewController.swift */; };
@@ -42,6 +43,7 @@
 		046A66D72763F50500D78A99 /* LeagueModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LeagueModel+CoreDataProperties.swift"; path = "R&JCodingChallenge/LeagueCoreData/LeagueModel+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		046A66DB2763F98800D78A99 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		046A66E32763FBA000D78A99 /* Competition+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Competition+extension.swift"; sourceTree = "<group>"; };
+		046A66E52763FCF600D78A99 /* League+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "League+extension.swift"; sourceTree = "<group>"; };
 		047508452762AA9700927241 /* R&JCodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "R&JCodingChallenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		047508482762AA9700927241 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0475084A2762AA9700927241 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				0475085E2762BF9600927241 /* LeagueViewController.swift */,
 				046A66DB2763F98800D78A99 /* DetailsViewController.swift */,
 				046A66E32763FBA000D78A99 /* Competition+extension.swift */,
+				046A66E52763FCF600D78A99 /* League+extension.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046A66E62763FCF600D78A99 /* League+extension.swift in Sources */,
 				0475084D2762AA9700927241 /* CompetitionsViewController.swift in Sources */,
 				047508612762C6A100927241 /* LeagueCollectionViewCell.swift in Sources */,
 				047508492762AA9700927241 /* AppDelegate.swift in Sources */,
