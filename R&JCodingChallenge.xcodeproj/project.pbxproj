@@ -12,6 +12,8 @@
 		046A66D42763F1FC00D78A99 /* CompetitionModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A66D22763F1FC00D78A99 /* CompetitionModel+CoreDataProperties.swift */; };
 		046A66D82763F50500D78A99 /* LeagueModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A66D62763F50500D78A99 /* LeagueModel+CoreDataClass.swift */; };
 		046A66D92763F50500D78A99 /* LeagueModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A66D72763F50500D78A99 /* LeagueModel+CoreDataProperties.swift */; };
+		046A66DC2763F98800D78A99 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A66DB2763F98800D78A99 /* DetailsViewController.swift */; };
+		046A66E42763FBA000D78A99 /* Competition+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A66E32763FBA000D78A99 /* Competition+extension.swift */; };
 		047508492762AA9700927241 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047508482762AA9700927241 /* AppDelegate.swift */; };
 		0475084B2762AA9700927241 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475084A2762AA9700927241 /* SceneDelegate.swift */; };
 		0475084D2762AA9700927241 /* CompetitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475084C2762AA9700927241 /* CompetitionsViewController.swift */; };
@@ -38,6 +40,8 @@
 		046A66D22763F1FC00D78A99 /* CompetitionModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompetitionModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		046A66D62763F50500D78A99 /* LeagueModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LeagueModel+CoreDataClass.swift"; path = "R&JCodingChallenge/LeagueCoreData/LeagueModel+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		046A66D72763F50500D78A99 /* LeagueModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LeagueModel+CoreDataProperties.swift"; path = "R&JCodingChallenge/LeagueCoreData/LeagueModel+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		046A66DB2763F98800D78A99 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		046A66E32763FBA000D78A99 /* Competition+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Competition+extension.swift"; sourceTree = "<group>"; };
 		047508452762AA9700927241 /* R&JCodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "R&JCodingChallenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		047508482762AA9700927241 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0475084A2762AA9700927241 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +96,65 @@
 			path = LeagueCoreData;
 			sourceTree = "<group>";
 		};
+		046A66DD2763FA7C00D78A99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				047508782762EF3600927241 /* AllCompetition.swift */,
+				047508742762D46900927241 /* PremierModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		046A66DE2763FA8400D78A99 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				047508762762D9F800927241 /* LeagueViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		046A66DF2763FA8F00D78A99 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				046A66E12763FB4A00D78A99 /* Cell */,
+				0475084C2762AA9700927241 /* CompetitionsViewController.swift */,
+				0475085E2762BF9600927241 /* LeagueViewController.swift */,
+				046A66DB2763F98800D78A99 /* DetailsViewController.swift */,
+				046A66E32763FBA000D78A99 /* Competition+extension.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		046A66E02763FAC900D78A99 /* Utitlies */ = {
+			isa = PBXGroup;
+			children = (
+				047508682762D33400927241 /* NetworkService.swift */,
+				0475086A2762D34100927241 /* AppError.swift */,
+				0475086C2762D34C00927241 /* Method.swift */,
+				0475086E2762D35C00927241 /* Route.swift */,
+				047508722762D3B500927241 /* String+extension.swift */,
+			);
+			path = Utitlies;
+			sourceTree = "<group>";
+		};
+		046A66E12763FB4A00D78A99 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				047508602762C6A100927241 /* LeagueCollectionViewCell.swift */,
+				0475085C2762AE8500927241 /* CustomCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		046A66E22763FB5A00D78A99 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				0475084A2762AA9700927241 /* SceneDelegate.swift */,
+				047508482762AA9700927241 /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		0475083C2762AA9700927241 = {
 			isa = PBXGroup;
 			children = (
@@ -113,26 +176,17 @@
 		047508472762AA9700927241 /* R&JCodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				046A66DA2763F51400D78A99 /* LeagueCoreData */,
-				046A66D52763F20E00D78A99 /* CompetitionCoreData */,
-				047508482762AA9700927241 /* AppDelegate.swift */,
-				0475084A2762AA9700927241 /* SceneDelegate.swift */,
-				0475084C2762AA9700927241 /* CompetitionsViewController.swift */,
+				046A66E22763FB5A00D78A99 /* Delegates */,
+				046A66E02763FAC900D78A99 /* Utitlies */,
+				046A66DF2763FA8F00D78A99 /* Views */,
+				046A66DE2763FA8400D78A99 /* ViewModel */,
+				046A66DD2763FA7C00D78A99 /* Model */,
 				0475084E2762AA9700927241 /* Main.storyboard */,
 				047508512762AA9B00927241 /* Assets.xcassets */,
 				047508532762AA9B00927241 /* LaunchScreen.storyboard */,
 				047508562762AA9B00927241 /* Info.plist */,
-				0475085C2762AE8500927241 /* CustomCollectionViewCell.swift */,
-				0475085E2762BF9600927241 /* LeagueViewController.swift */,
-				047508602762C6A100927241 /* LeagueCollectionViewCell.swift */,
-				047508682762D33400927241 /* NetworkService.swift */,
-				0475086A2762D34100927241 /* AppError.swift */,
-				0475086C2762D34C00927241 /* Method.swift */,
-				0475086E2762D35C00927241 /* Route.swift */,
-				047508722762D3B500927241 /* String+extension.swift */,
-				047508742762D46900927241 /* PremierModel.swift */,
-				047508762762D9F800927241 /* LeagueViewModel.swift */,
-				047508782762EF3600927241 /* AllCompetition.swift */,
+				046A66DA2763F51400D78A99 /* LeagueCoreData */,
+				046A66D52763F20E00D78A99 /* CompetitionCoreData */,
 				046A66C62763EF1500D78A99 /* CompetitionModel.xcdatamodeld */,
 			);
 			path = "R&JCodingChallenge";
@@ -286,9 +340,11 @@
 				046A66D92763F50500D78A99 /* LeagueModel+CoreDataProperties.swift in Sources */,
 				047508692762D33400927241 /* NetworkService.swift in Sources */,
 				046A66D82763F50500D78A99 /* LeagueModel+CoreDataClass.swift in Sources */,
+				046A66E42763FBA000D78A99 /* Competition+extension.swift in Sources */,
 				047508752762D46900927241 /* PremierModel.swift in Sources */,
 				0475086D2762D34C00927241 /* Method.swift in Sources */,
 				046A66D32763F1FC00D78A99 /* CompetitionModel+CoreDataClass.swift in Sources */,
+				046A66DC2763F98800D78A99 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

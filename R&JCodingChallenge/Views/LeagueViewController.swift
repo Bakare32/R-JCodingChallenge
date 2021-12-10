@@ -117,6 +117,14 @@ class LeagueViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == leagueCollectionView {
+            print("Hello")
+            let newVc = DetailsViewController()
+            navigationController?.pushViewController(newVc, animated: true)
+        }
+    }
 
     func getAllItems() {
         do {
