@@ -4,12 +4,14 @@
         <attribute name="country" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="compete" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LeagueModel" inverseName="league" inverseEntity="LeagueModel"/>
     </entity>
     <entity name="LeagueModel" representedClassName="LeagueModel" syncable="YES">
         <attribute name="imageUrl" optional="YES" attributeType="String"/>
+        <relationship name="league" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CompetitionModel" inverseName="compete" inverseEntity="CompetitionModel"/>
     </entity>
     <elements>
-        <element name="CompetitionModel" positionX="-54" positionY="-9" width="128" height="74"/>
-        <element name="LeagueModel" positionX="-36" positionY="36" width="128" height="44"/>
+        <element name="CompetitionModel" positionX="-54" positionY="-9" width="128" height="89"/>
+        <element name="LeagueModel" positionX="-54" positionY="18" width="128" height="59"/>
     </elements>
 </model>

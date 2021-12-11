@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import CoreData
 
 class LeagueViewController: UIViewController {
     
     
     
-    var items: [Team] = []
+    var items: [LeagueModel] = []
+    var returnCount: [Team] = []
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private let topBackArrowButton: UIButton = {
       let button = UIButton()
       button.addTarget(self, action: #selector(didTapTopBackArrowButton), for: .touchUpInside)
@@ -34,34 +37,62 @@ class LeagueViewController: UIViewController {
     
     private var leagueCollectionView: UICollectionView?
     
-    var usedId = ""
+    
+    var returnArray: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = .systemGreen
         setupCollectionView()
         setConstraint()
+        getAllItems()
         NetworkService.shared.getPl { [weak self] result in
             switch result {
                 
             case .success(let data):
-//                print("the data is \(data.teams)")
-                self?.items = data.teams
-//                let used = User()
+                
+                self?.returnCount = data.teams
                 for index in data.teams {
-//                    print("the index is \(index.crestURL)")
-                    self?.usedId = index.crestURL
-                    print("The used url is \(self?.usedId ?? "")")
-                    let defaults = UserDefaults.standard
-                    defaults.setValue(self?.usedId, forKey: "url")
-                    self?.leagueCollectionView?.reloadData()
+                    self?.createItem(with: index)
+                    DispatchQueue.main.async {
+                        self?.leagueCollectionView?.reloadData()
+                    }
                 }
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
+        
     }
+    
+    func getAllItems() {
+        do {
+            items = try context.fetch(LeagueModel.fetchRequest())
+                DispatchQueue.main.async {
+                    self.leagueCollectionView?.reloadData()
+                }
+            
+        }
+        catch {
+            
+        }
+       
+    }
+    
+    func createItem(with Model: Team) {
+        let newItem = LeagueModel(context: context)
+        newItem.imageUrl = Model.crestURL
+        
+        do {
+            try context.save()
+            getAllItems()
+        }
+        catch {
+            
+        }
+    }
+    
     
     func setupCollectionView() {
        
@@ -104,6 +135,7 @@ class LeagueViewController: UIViewController {
     @objc func didTapTopBackArrowButton() {
         navigationController?.popViewController(animated: true)
     }
+    
     
     
     

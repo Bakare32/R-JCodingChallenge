@@ -40,13 +40,13 @@ class LeagueCollectionViewCell: UICollectionViewCell {
     }
     
     
-    func setUp(with model: String) {
-        let image = try? model.asUrl
+    func setUp(with model: DisplayLeagueViewModel) {
+        let image = try? model.imageURL.asUrl
         imageView.kf.setImage(with: image)
     }
     
-    func configure(with urlString: String){
-      guard let url = URL(string: urlString) else {
+    func configure(with urlString: DisplayLeagueViewModel){
+        guard let url = URL(string: urlString.imageURL) else {
         return
         
       }

@@ -160,7 +160,7 @@ struct Team: Codable {
     let id: Int
     let area: Area
     let name, shortName, tla: String
-    let crestURL: String
+    var crestURL: String
     let address: String
     let phone: String?
     let website: String

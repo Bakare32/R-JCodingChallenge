@@ -2,7 +2,7 @@
 //  CompetitionModel+CoreDataProperties.swift
 //  R&JCodingChallenge
 //
-//  Created by  Decagon on 10/12/2021.
+//  Created by  Decagon on 11/12/2021.
 //
 //
 
@@ -16,9 +16,10 @@ extension CompetitionModel {
         return NSFetchRequest<CompetitionModel>(entityName: "CompetitionModel")
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var country: String?
     @NSManaged public var date: String?
+    @NSManaged public var name: String?
+    @NSManaged public var compete: LeagueModel?
 
 }
 
