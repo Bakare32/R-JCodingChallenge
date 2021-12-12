@@ -15,6 +15,7 @@
 		0424C5BB2765547A001AF38D /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424C5BA2765547A001AF38D /* PlayerTableViewCell.swift */; };
 		0424C5BD27655644001AF38D /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424C5BC27655644001AF38D /* ContactModel.swift */; };
 		0424C5BF2765614B001AF38D /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424C5BE2765614B001AF38D /* TeamModel.swift */; };
+		0424C5CB27659616001AF38D /* R_JCodingChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424C5CA27659616001AF38D /* R_JCodingChallengeTests.swift */; };
 		046A66C82763EF1500D78A99 /* CompetitionModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 046A66C62763EF1500D78A99 /* CompetitionModel.xcdatamodeld */; };
 		046A66DC2763F98800D78A99 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A66DB2763F98800D78A99 /* DetailsViewController.swift */; };
 		046A66E42763FBA000D78A99 /* Competition+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A66E32763FBA000D78A99 /* Competition+extension.swift */; };
@@ -39,6 +40,16 @@
 		E94396F44D9B31353A1E8DCC /* Pods_R_JCodingChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329A3E3D2A0D981BBF03901D /* Pods_R_JCodingChallenge.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0424C5CC27659616001AF38D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0475083D2762AA9700927241 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 047508442762AA9700927241;
+			remoteInfo = "R&JCodingChallenge";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0424C5AE276538C9001AF38D /* CompetitionModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompetitionModel+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		0424C5AF276538C9001AF38D /* CompetitionModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompetitionModel+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -48,6 +59,8 @@
 		0424C5BA2765547A001AF38D /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		0424C5BC27655644001AF38D /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		0424C5BE2765614B001AF38D /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
+		0424C5C827659616001AF38D /* R&JCodingChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "R&JCodingChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0424C5CA27659616001AF38D /* R_JCodingChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R_JCodingChallengeTests.swift; sourceTree = "<group>"; };
 		046A66C72763EF1500D78A99 /* CompetitionModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CompetitionModel.xcdatamodel; sourceTree = "<group>"; };
 		046A66DB2763F98800D78A99 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		046A66E32763FBA000D78A99 /* Competition+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Competition+extension.swift"; sourceTree = "<group>"; };
@@ -77,6 +90,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0424C5C527659616001AF38D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		047508422762AA9700927241 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0424C5C927659616001AF38D /* R&JCodingChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				0424C5CA27659616001AF38D /* R_JCodingChallengeTests.swift */,
+			);
+			path = "R&JCodingChallengeTests";
+			sourceTree = "<group>";
+		};
 		046A66D52763F20E00D78A99 /* CompetitionCoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				047508472762AA9700927241 /* R&JCodingChallenge */,
+				0424C5C927659616001AF38D /* R&JCodingChallengeTests */,
 				047508462762AA9700927241 /* Products */,
 				4613C20705804EBD7AA94425 /* Pods */,
 				62D8DC83E608309448937EE8 /* Frameworks */,
@@ -171,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				047508452762AA9700927241 /* R&JCodingChallenge.app */,
+				0424C5C827659616001AF38D /* R&JCodingChallengeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,6 +249,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0424C5C727659616001AF38D /* R&JCodingChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0424C5CE27659616001AF38D /* Build configuration list for PBXNativeTarget "R&JCodingChallengeTests" */;
+			buildPhases = (
+				0424C5C427659616001AF38D /* Sources */,
+				0424C5C527659616001AF38D /* Frameworks */,
+				0424C5C627659616001AF38D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0424C5CD27659616001AF38D /* PBXTargetDependency */,
+			);
+			name = "R&JCodingChallengeTests";
+			productName = "R&JCodingChallengeTests";
+			productReference = 0424C5C827659616001AF38D /* R&JCodingChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		047508442762AA9700927241 /* R&JCodingChallenge */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 047508592762AA9B00927241 /* Build configuration list for PBXNativeTarget "R&JCodingChallenge" */;
@@ -248,6 +296,10 @@
 				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
+					0424C5C727659616001AF38D = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 047508442762AA9700927241;
+					};
 					047508442762AA9700927241 = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -267,11 +319,19 @@
 			projectRoot = "";
 			targets = (
 				047508442762AA9700927241 /* R&JCodingChallenge */,
+				0424C5C727659616001AF38D /* R&JCodingChallengeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0424C5C627659616001AF38D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		047508432762AA9700927241 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -327,6 +387,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0424C5C427659616001AF38D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0424C5CB27659616001AF38D /* R_JCodingChallengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		047508412762AA9700927241 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -362,6 +430,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0424C5CD27659616001AF38D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 047508442762AA9700927241 /* R&JCodingChallenge */;
+			targetProxy = 0424C5CC27659616001AF38D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		0475084E2762AA9700927241 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -382,6 +458,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0424C5CF27659616001AF38D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.waris.R-JCodingChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/R&JCodingChallenge.app/R&JCodingChallenge";
+			};
+			name = Debug;
+		};
+		0424C5D027659616001AF38D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.waris.R-JCodingChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/R&JCodingChallenge.app/R&JCodingChallenge";
+			};
+			name = Release;
+		};
 		047508572762AA9B00927241 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -559,6 +679,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0424C5CE27659616001AF38D /* Build configuration list for PBXNativeTarget "R&JCodingChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0424C5CF27659616001AF38D /* Debug */,
+				0424C5D027659616001AF38D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		047508402762AA9700927241 /* Build configuration list for PBXProject "R&JCodingChallenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

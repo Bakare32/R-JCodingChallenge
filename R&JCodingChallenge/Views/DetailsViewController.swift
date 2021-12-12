@@ -196,6 +196,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
 
     var toUseId = 0
     var used = ""
+    var returnArray: [Any] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -208,7 +209,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
             case .success(let data):
                 print(data.squad)
                 self?.data = data.squad
-                UserDefaults.standard.set(self?.data, forKey: "data")
                 self?.tableView.reloadData()
                 UserDefaults.standard.set(data.crestURL, forKey: "used")
                 UserDefaults.standard.set(data.website, forKey: "website")
