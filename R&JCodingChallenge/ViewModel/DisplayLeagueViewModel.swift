@@ -11,6 +11,7 @@ import UIKit
 class DisplayLeagueViewModel: ObservableObject {
    
     var imageURL: String = ""
+    var imageData: Data? = nil
     
     init(with model: LeagueModel) {
         imageURL = model.imageUrl ?? ""

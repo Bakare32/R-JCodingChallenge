@@ -32,6 +32,7 @@ class PlayerTableViewCell: UITableViewCell {
     var countryLabel: UILabel = {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
 //        titleLabel.font = UIFont(name: AppFonts.nunitoSansBold.font, size: 25)
+        titleLabel.textColor = .systemGreen
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return titleLabel
     }()

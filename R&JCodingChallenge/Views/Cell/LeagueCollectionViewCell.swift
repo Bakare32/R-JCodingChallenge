@@ -45,27 +45,57 @@ class LeagueCollectionViewCell: UICollectionViewCell {
         imageView.kf.setImage(with: image)
     }
     
-    func configure(with urlString: DisplayLeagueViewModel){
-        guard let url = URL(string: urlString.imageURL) else {
-        return
+    
+    public func configure(with viewModel: DisplayLeagueViewModel) {
         
-      }
-      URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-        guard let data = data , error == nil else {
-          return
+        let urlString = viewModel.imageURL
+        let url = URL(string: urlString)
+        if urlString.contains("svg"){
+            URLSession.shared.dataTask(with: url!) { data, _, error in
+                guard let data = data, error == nil else { return}
+                viewModel.imageData = data
+                DispatchQueue.main.async {
+                    guard let image: SVGKImage = SVGKImage(contentsOf: url) else {
+                        return
+                    }
+                    self.imageView.image = image.uiImage
+                    guard let img  = UIImage(data: data) else { return }
+                    self.imageView.image = img
+                }
+            }.resume()
+        } else {
+            URLSession.shared.dataTask(with: url!) { data, _, error in
+                guard let data = data, error == nil else { return}
+                viewModel.imageData = data
+                DispatchQueue.main.async {
+                    self.imageView.image = UIImage(data: data)
+                }
+            }.resume()
         }
-        DispatchQueue.main.async {
-          print(data)
-          
-          guard let image: SVGKImage = SVGKImage(contentsOf: url) else {
-            return
-          }
-          self?.imageView.image = image.uiImage
-          guard let img  = UIImage(data: data) else { return }
-          self?.imageView.image = img
-          
-        }
-      }.resume()
     }
+
+    
+//    func configure(with urlString: DisplayLeagueViewModel){
+//        guard let url = URL(string: urlString.imageURL) else {
+//        return
+//
+//      }
+//      URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+//        guard let data = data , error == nil else {
+//          return
+//        }
+//        DispatchQueue.main.async {
+//          print(data)
+//
+//          guard let image: SVGKImage = SVGKImage(contentsOf: url) else {
+//            return
+//          }
+//          self?.imageView.image = image.uiImage
+//          guard let img  = UIImage(data: data) else { return }
+//          self?.imageView.image = img
+//
+//        }
+//      }.resume()
+//    }
     
 }

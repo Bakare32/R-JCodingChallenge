@@ -138,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				047508762762D9F800927241 /* LeagueViewModel.swift */,
+				0424C5B827653DD4001AF38D /* DisplayLeagueViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -172,6 +173,7 @@
 			children = (
 				047508602762C6A100927241 /* LeagueCollectionViewCell.swift */,
 				0475085C2762AE8500927241 /* CustomCollectionViewCell.swift */,
+				0424C5BA2765547A001AF38D /* PlayerTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -223,8 +225,6 @@
 				047508562762AA9B00927241 /* Info.plist */,
 				046A66D52763F20E00D78A99 /* CompetitionCoreData */,
 				046A66C62763EF1500D78A99 /* CompetitionModel.xcdatamodeld */,
-				0424C5B827653DD4001AF38D /* DisplayLeagueViewModel.swift */,
-				0424C5BA2765547A001AF38D /* PlayerTableViewCell.swift */,
 			);
 			path = "R&JCodingChallenge";
 			sourceTree = "<group>";

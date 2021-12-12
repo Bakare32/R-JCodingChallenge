@@ -21,11 +21,12 @@ extension LeagueViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let detailViewcontroller = DetailsViewController()
         detailViewcontroller.toUseId = usedItem.id
         UserDefaults.standard.set(detailViewcontroller.toUseId, forKey: "query")
-        if ((item.imageUrl?.contains("svg")) != nil) {
-            cell.configure(with: DisplayLeagueViewModel(with: item))
-        } else {
-            cell.setUp(with: DisplayLeagueViewModel(with: item))
-        }
+        cell.configure(with: DisplayLeagueViewModel(with: item))
+//        if ((item.imageUrl?.contains("svg")) != nil) {
+//            cell.configure(with: DisplayLeagueViewModel(with: item))
+//        } else {
+//            cell.setUp(with: DisplayLeagueViewModel(with: item))
+//        }
         
         return cell
     }
