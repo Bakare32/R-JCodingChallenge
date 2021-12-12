@@ -13,7 +13,6 @@ struct ContactData {
     let firstImageName: String
     let title: String
     let message: String
-//    let secondImageName: String
     let country: String
     let dateOfBirth: String
 }

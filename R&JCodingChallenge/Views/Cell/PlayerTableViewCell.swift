@@ -13,13 +13,11 @@ class PlayerTableViewCell: UITableViewCell {
 
     var titleLabel: UILabel = {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-//        titleLabel.font = UIFont(name: AppFonts.nunitoSansBold.font, size: 25)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return titleLabel
     }()
     var messageLabel: UILabel = {
         let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-//        messageLabel.font = UIFont(name: AppFonts.nunitoSansRegular.font, size: 15)
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         return messageLabel
     }()
@@ -31,24 +29,17 @@ class PlayerTableViewCell: UITableViewCell {
     }()
     var countryLabel: UILabel = {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-//        titleLabel.font = UIFont(name: AppFonts.nunitoSansBold.font, size: 25)
         titleLabel.textColor = .systemGreen
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return titleLabel
     }()
     var dateOfbirthLabel: UILabel = {
         let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-//        messageLabel.font = UIFont(name: AppFonts.nunitoSansRegular.font, size: 15)
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         return messageLabel
     }()
     
-//    var secondImage: UIImageView = {
-//        let secondImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-//        secondImage.contentMode = .scaleAspectFit
-//        secondImage.translatesAutoresizingMaskIntoConstraints = false
-//        return secondImage
-//    }()
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(titleLabel)
@@ -67,8 +58,6 @@ class PlayerTableViewCell: UITableViewCell {
             firstImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             firstImage.heightAnchor.constraint(equalToConstant: 55),
             titleLabel.leadingAnchor.constraint(equalTo: firstImage.trailingAnchor, constant: 30),
-//            secondImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-//            secondImage.heightAnchor.constraint(equalToConstant: 55),
             messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
             messageLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             countryLabel.topAnchor.constraint(equalTo: topAnchor),

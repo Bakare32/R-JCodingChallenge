@@ -30,8 +30,6 @@ class CompetitionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGreen
-//        navigationController?.navigationBar.backgroundColor = .systemGreen
-//        title = "Competitions"
         
         navigationController?.navigationBar.isHidden = true
         setupCollectionView()
@@ -42,9 +40,6 @@ class CompetitionsViewController: UIViewController {
             switch result {
                 
             case .success(let data):
-//                print("The data is \(data.competitions)")
-//                self?.listOfCompletition = data.competitions
-//                self?.collectionView?.reloadData()
                 for index in data.competitions {
                     self?.createItem(with: index)
                 }
@@ -72,7 +67,6 @@ class CompetitionsViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         view.addSubview(collectionView)
-//        collectionView.frame = CGRect(x: 10, y: view.frame.size.height-50, width: view.frame.size.width-10, height: 50)
     }
     
     

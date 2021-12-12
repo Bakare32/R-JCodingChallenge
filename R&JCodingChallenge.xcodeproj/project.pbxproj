@@ -51,10 +51,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0424C5AE276538C9001AF38D /* CompetitionModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompetitionModel+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		0424C5AF276538C9001AF38D /* CompetitionModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompetitionModel+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		0424C5B0276538C9001AF38D /* LeagueModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeagueModel+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		0424C5B1276538C9001AF38D /* LeagueModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeagueModel+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		0424C5AE276538C9001AF38D /* CompetitionModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CompetitionModel+CoreDataClass.swift"; path = "R&JCodingChallenge/CompetitionCoreData/CompetitionModel+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		0424C5AF276538C9001AF38D /* CompetitionModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CompetitionModel+CoreDataProperties.swift"; path = "R&JCodingChallenge/CompetitionCoreData/CompetitionModel+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		0424C5B0276538C9001AF38D /* LeagueModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LeagueModel+CoreDataClass.swift"; path = "R&JCodingChallenge/LeagueCoredata/LeagueModel+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		0424C5B1276538C9001AF38D /* LeagueModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LeagueModel+CoreDataProperties.swift"; path = "R&JCodingChallenge/LeagueCoredata/LeagueModel+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		0424C5B827653DD4001AF38D /* DisplayLeagueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayLeagueViewModel.swift; sourceTree = "<group>"; };
 		0424C5BA2765547A001AF38D /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		0424C5BC27655644001AF38D /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
@@ -116,9 +116,20 @@
 			path = "R&JCodingChallengeTests";
 			sourceTree = "<group>";
 		};
+		0424C5D12766125A001AF38D /* LeagueCoredata */ = {
+			isa = PBXGroup;
+			children = (
+				0424C5B0276538C9001AF38D /* LeagueModel+CoreDataClass.swift */,
+				0424C5B1276538C9001AF38D /* LeagueModel+CoreDataProperties.swift */,
+			);
+			path = LeagueCoredata;
+			sourceTree = "<group>";
+		};
 		046A66D52763F20E00D78A99 /* CompetitionCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				0424C5AE276538C9001AF38D /* CompetitionModel+CoreDataClass.swift */,
+				0424C5AF276538C9001AF38D /* CompetitionModel+CoreDataProperties.swift */,
 			);
 			path = CompetitionCoreData;
 			sourceTree = "<group>";
@@ -210,10 +221,7 @@
 		047508472762AA9700927241 /* R&JCodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				0424C5AE276538C9001AF38D /* CompetitionModel+CoreDataClass.swift */,
-				0424C5AF276538C9001AF38D /* CompetitionModel+CoreDataProperties.swift */,
-				0424C5B0276538C9001AF38D /* LeagueModel+CoreDataClass.swift */,
-				0424C5B1276538C9001AF38D /* LeagueModel+CoreDataProperties.swift */,
+				0424C5D12766125A001AF38D /* LeagueCoredata */,
 				046A66E22763FB5A00D78A99 /* Delegates */,
 				046A66E02763FAC900D78A99 /* Utitlies */,
 				046A66DF2763FA8F00D78A99 /* Views */,

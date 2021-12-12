@@ -28,7 +28,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.numberOfLines = 2
       label.font = UIFont(name: "Helvetica", size: 20)
         label.textColor = .white
-//      label.textAlignment = .white
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
@@ -50,7 +49,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.font = UIFont(name: "Helvetica", size: 20)
         label.textColor = .systemGreen
         label.backgroundColor = .white
-//      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
@@ -226,7 +224,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
                     self?.phoneNumberLabel.text = data.phone
                     self?.addressNameLabel.text = data.address
                     self?.nickLabel.text = data.name
-//                    self?.used = data.crestURL
                 }
             case .failure(let error):
                 self?.userDefaul()
@@ -369,9 +366,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
                 cell.layer.cornerRadius = 8
                 cell.clipsToBounds = true
         cell.titleLabel.text = model.name
-//        cell.titleLabel.text = model.name
         cell.messageLabel.text = model.position
-////        cell.firstImage.image = UIImage(named: model.firstImageName)
         cell.countryLabel.text = model.nationality
         cell.dateOfbirthLabel.text = "\(String(describing: model.dateOfBirth))"
         return cell

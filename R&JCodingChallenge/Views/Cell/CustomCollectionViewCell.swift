@@ -21,7 +21,6 @@ class CustomCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Premier League"
         label.font = UIFont(name: "Helvetica-bold", size: 15)
-//        label.backgroundColor = .red
         label.textAlignment = .center
         return label
     }()
@@ -30,7 +29,6 @@ class CustomCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Country"
         label.font = UIFont(name: "Helvetica-regular", size: 15)
-//        label.backgroundColor = .green
         label.textAlignment = .center
         return label
     }()
@@ -38,8 +36,6 @@ class CustomCollectionViewCell: UICollectionViewCell {
     private let myLabel3: UILabel = {
         let label = UILabel()
         label.text = "Start Date:"
-//        label.backgroundColor = .red
-//        label.textAlignment = .center
         return label
     }()
     
@@ -47,14 +43,11 @@ class CustomCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "02-10-2020"
         label.font = UIFont(name: "Helvetica-thin", size: 15)
-//        label.backgroundColor = .yellow
-//        label.textAlignment = .center
         return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        contentView.backgroundColor = .systemRed
         contentView.addSubview(myLabel1)
         contentView.addSubview(myLabel2)
         contentView.addSubview(myLabel3)

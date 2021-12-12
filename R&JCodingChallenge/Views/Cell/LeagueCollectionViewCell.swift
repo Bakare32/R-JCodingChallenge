@@ -15,7 +15,6 @@ class LeagueCollectionViewCell: UICollectionViewCell {
  
     private let imageView: UIImageView = {
        let imageView = UIImageView()
-//        imageView.backgroundColor = .red
         imageView.image = UIImage(systemName: "house")
         return imageView
     }()
@@ -24,7 +23,6 @@ class LeagueCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(imageView)
-//        setUp()
     }
     
     required init?(coder: NSCoder) {
@@ -75,27 +73,5 @@ class LeagueCollectionViewCell: UICollectionViewCell {
     }
 
     
-//    func configure(with urlString: DisplayLeagueViewModel){
-//        guard let url = URL(string: urlString.imageURL) else {
-//        return
-//
-//      }
-//      URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-//        guard let data = data , error == nil else {
-//          return
-//        }
-//        DispatchQueue.main.async {
-//          print(data)
-//
-//          guard let image: SVGKImage = SVGKImage(contentsOf: url) else {
-//            return
-//          }
-//          self?.imageView.image = image.uiImage
-//          guard let img  = UIImage(data: data) else { return }
-//          self?.imageView.image = img
-//
-//        }
-//      }.resume()
-//    }
     
 }
