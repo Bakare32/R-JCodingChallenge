@@ -120,7 +120,7 @@ class LeagueViewController: UIViewController {
             return
         }
         collectionView.anchorWithConstantsToTop(top: view.safeAreaLayoutGuide.topAnchor,
-                                                left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 80, leftConstant: 0, bottomConstant: 0, rightConstant: 0)
+                                                left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 60, leftConstant: 0, bottomConstant: 0, rightConstant: 0)
         
         NSLayoutConstraint.activate([
             topBackArrowButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),

@@ -26,7 +26,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       let label = UILabel()
       label.text = "Teams Name"
       label.numberOfLines = 2
-      label.font = UIFont(name: "Helvetica", size: 20)
+      label.font = UIFont(name: "Helvetica", size: 25)
         label.textColor = .white
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
@@ -34,7 +34,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     private let imageView: UIImageView = {
        let imageView = UIImageView()
-        imageView.backgroundColor = .systemFill
+        imageView.backgroundColor = .systemRed
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -48,7 +48,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
         label.textColor = .systemGreen
-        label.backgroundColor = .white
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
@@ -177,10 +176,15 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
         label.textColor = .systemGreen
-        label.backgroundColor = .white
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
+    let topView: UIView = {
+            let view = UIView()
+            view.backgroundColor = .systemGreen
+            view.translatesAutoresizingMaskIntoConstraints = false
+            return view
+        }()
     var tableView = UITableView()
     func configureTableView() {
         view.addSubview(tableView)
@@ -198,7 +202,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemGreen
+        view.backgroundColor = .systemGray6
         configureTableView()
         setUpConstraint()
         NetworkService.shared.getTeam { [weak self] result in
@@ -278,8 +282,10 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func setUpConstraint() {
-        view.addSubview(topBackArrowButton)
-        view.addSubview(titleLabel)
+        view.addSubview(topView)
+//        view.addSubview(topBackArrowButton)
+        topView.addSubview(topBackArrowButton)
+        topView.addSubview(titleLabel)
         view.addSubview(imageView)
         view.addSubview(clubLabel)
         view.addSubview(productDetailsView)
@@ -302,10 +308,14 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
         
         
         NSLayoutConstraint.activate([
-            topBackArrowButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            topBackArrowButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            topView.topAnchor.constraint(equalTo: view.topAnchor, constant: -10),
+                        topView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                        topView.widthAnchor.constraint(equalTo: view.widthAnchor),
+                        topView.heightAnchor.constraint(equalToConstant: 100),
+            topBackArrowButton.topAnchor.constraint(equalTo: topView.topAnchor, constant: 60),
+            topBackArrowButton.leadingAnchor.constraint(equalTo: topView.leadingAnchor, constant: 20),
+            titleLabel.topAnchor.constraint(equalTo: topView.topAnchor, constant: 60),
+            titleLabel.centerXAnchor.constraint(equalTo: topView.centerXAnchor),
             imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
             imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
@@ -365,6 +375,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.layer.borderWidth = 1
                 cell.layer.cornerRadius = 8
                 cell.clipsToBounds = true
+        cell.backgroundColor = .white
         cell.titleLabel.text = model.name
         cell.messageLabel.text = model.position
         cell.countryLabel.text = model.nationality
