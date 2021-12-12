@@ -6,15 +6,12 @@
 //
 
 import UIKit
+import Kingfisher
+import SVGKit
 
 class DetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
    
-    let data: [ContactData] = {
-        let firstContact = ContactData(firstImageName: "phone", title: "Phone", message: "+01 234567890",country: "Country" , dateOfBirth: "Date of Birth")
-        let secondContact = ContactData(firstImageName: "email", title: "Email", message: "support@relax.io",country: "Country" , dateOfBirth: "Date of Birth" )
-        let thirdContact = ContactData(firstImageName: "message", title: "App Chat", message: "Average waiting time: 5min",country: "Country" , dateOfBirth: "Date of Birth" )
-        return [firstContact, secondContact, thirdContact]
-    }()
+    var data: [Squad] = []
 
     private let topBackArrowButton: UIButton = {
       let button = UIButton()
@@ -31,14 +28,14 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.numberOfLines = 2
       label.font = UIFont(name: "Helvetica", size: 20)
         label.textColor = .white
-      label.textAlignment = .center
+//      label.textAlignment = .white
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
     
     private let imageView: UIImageView = {
        let imageView = UIImageView()
-        imageView.backgroundColor = .red
+        imageView.backgroundColor = .systemFill
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -52,6 +49,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
         label.textColor = .systemGreen
+        label.backgroundColor = .white
 //      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
@@ -71,7 +69,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "Founded:"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-        label.textColor = .systemGreen
+//        label.textColor = .systemGreen
 //      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
@@ -82,7 +80,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "01 May 1986"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-        label.textColor = .systemGreen
+//        label.textColor = .systemGreen
 //      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
@@ -93,7 +91,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "NickName:"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-        label.textColor = .systemGreen
+//        label.textColor = .systemGreen
 //      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
@@ -104,7 +102,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "Gunners"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-        label.textColor = .systemGreen
+//        label.textColor = .systemGreen
 //      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
@@ -116,7 +114,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "Address"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-        label.textColor = .systemGreen
+//        label.textColor = .systemGreen
 //      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
@@ -127,7 +125,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "No3, jakan street, agbowo"
       label.numberOfLines = 4
       label.font = UIFont(name: "Helvetica", size: 20)
-        label.textColor = .systemCyan
+//        label.textColor = .systemCyan
 //      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
@@ -138,7 +136,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "Phone Number:"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-        label.textColor = .systemGreen
+//        label.textColor = .systemGreen
 //      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
@@ -149,7 +147,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "+44-289056389"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-        label.textColor = .systemGreen
+//        label.textColor = .systemGreen
 //      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
@@ -160,7 +158,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "Website:"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-        label.textColor = .systemGreen
+//        label.textColor = .systemGreen
 //      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
@@ -171,7 +169,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "https://arsenal.com"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-        label.textColor = .systemGreen
+//        label.textColor = .systemGreen
 //      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
@@ -182,7 +180,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "Email Address:"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-        label.textColor = .systemGreen
+//        label.textColor = .systemGreen
 //      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
@@ -193,7 +191,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "info@borussia.com"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-        label.textColor = .systemGreen
+//        label.textColor = .systemGreen
 //      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
@@ -222,6 +220,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 
     var toUseId = 0
+    var used = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -232,13 +231,11 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
             switch result {
                 
             case .success(let data):
-                print(data.name)
-                print(data.founded)
-                print(data.shortName)
-                print(data.website)
-                print(data.email)
-                print(data.address)
-                print(data.phone)
+                print(data.squad)
+                self?.data = data.squad
+                print(self?.data.count)
+                self?.tableView.reloadData()
+                UserDefaults.standard.set(data.crestURL, forKey: "used")
                 DispatchQueue.main.async {
                     self?.titleLabel.text = data.shortName
                     self?.emailAddressLabel.text = data.email
@@ -246,15 +243,26 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
                     self?.foundedDateLabel.text = "\(data.founded)"
                     self?.phoneNumberLabel.text = data.phone
                     self?.addressNameLabel.text = data.address
-                    self?.nicknameLabel.text = data.name
+                    self?.nickLabel.text = data.name
+//                    self?.used = data.crestURL
                 }
             case .failure(let error):
                 print("The error is: \(error.localizedDescription)")
             }
         }
+        configure()
+//        setUp()
     }
     
-    func configure(with urlString: String){
+//    func setUp() {
+//        let image = try? UserDefaults.standard.string(forKey: "used")?.asUrl
+//        print(image)
+//        imageView.kf.setImage(with: image)
+//    }
+    
+    func configure(){
+        let urlString = UserDefaults.standard.string(forKey: "used")!
+        print(urlString)
       guard let url = URL(string: urlString) else {
         return
       }
@@ -262,9 +270,14 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
         guard let data = data , error == nil else {
           return
         }
+          print(data)
         DispatchQueue.main.async {
-          let image = UIImage(data: data)
-            self?.imageView.image = image!
+            guard let image: SVGKImage = SVGKImage(contentsOf: url) else {
+              return
+            }
+            self?.imageView.image = image.uiImage
+            guard let img  = UIImage(data: data) else { return }
+            self?.imageView.image = img
         }
       }.resume()
     }
@@ -313,7 +326,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
             foundedLabel.topAnchor.constraint(equalTo: productDetailsView.topAnchor, constant: 20),
             foundedLabel.leadingAnchor.constraint(equalTo: productDetailsView.leadingAnchor, constant: 10),
             foundedDateLabel.topAnchor.constraint(equalTo: productDetailsView.topAnchor, constant: 20),
-            foundedDateLabel.trailingAnchor.constraint(equalTo: productDetailsView.trailingAnchor, constant: -30),
+            foundedDateLabel.trailingAnchor.constraint(equalTo: productDetailsView.trailingAnchor, constant: -50),
             nicknameLabel.topAnchor.constraint(equalTo: foundedLabel.bottomAnchor, constant: 20),
             nicknameLabel.leadingAnchor.constraint(equalTo: productDetailsView.leadingAnchor, constant: 10),
             nickLabel.topAnchor.constraint(equalTo: foundedDateLabel.bottomAnchor, constant: 20),
@@ -321,19 +334,19 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
             addressLabel.topAnchor.constraint(equalTo: nicknameLabel.bottomAnchor, constant: 20),
             addressLabel.leadingAnchor.constraint(equalTo: productDetailsView.leadingAnchor, constant: 10),
             addressNameLabel.topAnchor.constraint(equalTo: nickLabel.bottomAnchor, constant: 20),
-            addressNameLabel.leadingAnchor.constraint(equalTo: productDetailsView.leadingAnchor, constant: 40),
-//            addressNameLabel.trailingAnchor.constraint(equalTo: productDetailsView.trailingAnchor, constant: 0),
-            phoneLabel.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 20),
+            addressNameLabel.leadingAnchor.constraint(equalTo: productDetailsView.leadingAnchor, constant: 100),
+            addressNameLabel.trailingAnchor.constraint(equalTo: productDetailsView.trailingAnchor, constant: -5),
+            phoneLabel.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 35),
             phoneLabel.leadingAnchor.constraint(equalTo: productDetailsView.leadingAnchor, constant: 10),
-            phoneNumberLabel.topAnchor.constraint(equalTo: addressNameLabel.bottomAnchor, constant: 20),
+            phoneNumberLabel.topAnchor.constraint(equalTo: addressNameLabel.bottomAnchor, constant: 12),
             phoneNumberLabel.trailingAnchor.constraint(equalTo: productDetailsView.trailingAnchor, constant: -20),
-            websiteLabel.topAnchor.constraint(equalTo: phoneLabel.bottomAnchor, constant: 20),
+            websiteLabel.topAnchor.constraint(equalTo: phoneLabel.bottomAnchor, constant: 25),
             websiteLabel.leadingAnchor.constraint(equalTo: productDetailsView.leadingAnchor, constant: 10),
-            websiteNameLabel.topAnchor.constraint(equalTo: phoneNumberLabel.bottomAnchor, constant: 20),
+            websiteNameLabel.topAnchor.constraint(equalTo: phoneNumberLabel.bottomAnchor, constant: 25),
             websiteNameLabel.trailingAnchor.constraint(equalTo: productDetailsView.trailingAnchor, constant: -20),
-            emailLabel.topAnchor.constraint(equalTo: websiteLabel.bottomAnchor, constant: 20),
+            emailLabel.topAnchor.constraint(equalTo: websiteLabel.bottomAnchor, constant: 25),
             emailLabel.leadingAnchor.constraint(equalTo: productDetailsView.leadingAnchor, constant: 10),
-            emailAddressLabel.topAnchor.constraint(equalTo: websiteNameLabel.bottomAnchor, constant: 20),
+            emailAddressLabel.topAnchor.constraint(equalTo: websiteNameLabel.bottomAnchor, constant: 25),
             emailAddressLabel.trailingAnchor.constraint(equalTo: productDetailsView.trailingAnchor, constant: -20),
             
         ])
@@ -357,11 +370,12 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.layer.borderWidth = 1
                 cell.layer.cornerRadius = 8
                 cell.clipsToBounds = true
-        cell.titleLabel.text = model.title
-        cell.messageLabel.text = model.message
-        cell.firstImage.image = UIImage(named: model.firstImageName)
-        cell.countryLabel.text = model.country
-        cell.dateOfbirthLabel.text = model.dateOfBirth
+        cell.titleLabel.text = model.name
+//        cell.titleLabel.text = model.name
+        cell.messageLabel.text = model.position
+////        cell.firstImage.image = UIImage(named: model.firstImageName)
+        cell.countryLabel.text = model.nationality
+        cell.dateOfbirthLabel.text = "\(String(describing: model.dateOfBirth))"
         return cell
     }
     
