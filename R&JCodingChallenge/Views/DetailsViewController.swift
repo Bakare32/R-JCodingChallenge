@@ -69,8 +69,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "Founded:"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-//        label.textColor = .systemGreen
-//      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
@@ -80,8 +78,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "01 May 1986"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-//        label.textColor = .systemGreen
-//      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
@@ -91,8 +87,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "NickName:"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-//        label.textColor = .systemGreen
-//      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
@@ -102,8 +96,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "Gunners"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-//        label.textColor = .systemGreen
-//      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
@@ -114,8 +106,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "Address"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-//        label.textColor = .systemGreen
-//      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
@@ -125,8 +115,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "No3, jakan street, agbowo"
       label.numberOfLines = 4
       label.font = UIFont(name: "Helvetica", size: 20)
-//        label.textColor = .systemCyan
-//      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
@@ -136,8 +124,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "Phone Number:"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-//        label.textColor = .systemGreen
-//      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
@@ -147,8 +133,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "+44-289056389"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-//        label.textColor = .systemGreen
-//      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
@@ -158,8 +142,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "Website:"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-//        label.textColor = .systemGreen
-//      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
@@ -169,8 +151,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "https://arsenal.com"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-//        label.textColor = .systemGreen
-//      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
@@ -180,8 +160,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "Email Address:"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-//        label.textColor = .systemGreen
-//      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
@@ -191,8 +169,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.text = "info@borussia.com"
       label.numberOfLines = 1
       label.font = UIFont(name: "Helvetica", size: 20)
-//        label.textColor = .systemGreen
-//      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
@@ -204,7 +180,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
       label.font = UIFont(name: "Helvetica", size: 20)
         label.textColor = .systemGreen
         label.backgroundColor = .white
-//      label.textAlignment = .center
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
@@ -233,9 +208,16 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
             case .success(let data):
                 print(data.squad)
                 self?.data = data.squad
-                print(self?.data.count)
+                UserDefaults.standard.set(self?.data, forKey: "data")
                 self?.tableView.reloadData()
                 UserDefaults.standard.set(data.crestURL, forKey: "used")
+                UserDefaults.standard.set(data.website, forKey: "website")
+                UserDefaults.standard.set(data.shortName, forKey: "title")
+                UserDefaults.standard.set(data.email, forKey: "email")
+                UserDefaults.standard.set(data.founded, forKey: "founded")
+                UserDefaults.standard.set(data.phone, forKey: "phone")
+                UserDefaults.standard.set(data.address, forKey: "address")
+                UserDefaults.standard.set(data.name, forKey: "nick")
                 DispatchQueue.main.async {
                     self?.titleLabel.text = data.shortName
                     self?.emailAddressLabel.text = data.email
@@ -247,23 +229,39 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
 //                    self?.used = data.crestURL
                 }
             case .failure(let error):
+                self?.userDefaul()
+                self?.setUp()
+                self?.configure()
+                self?.tableView.reloadData()
                 print("The error is: \(error.localizedDescription)")
+                
             }
         }
         configure()
-//        setUp()
+        setUp()
+        userDefaul()
     }
     
-//    func setUp() {
-//        let image = try? UserDefaults.standard.string(forKey: "used")?.asUrl
-//        print(image)
-//        imageView.kf.setImage(with: image)
-//    }
+    func userDefaul() {
+            self.websiteNameLabel.text = UserDefaults.standard.string(forKey: "website")
+            self.titleLabel.text = UserDefaults.standard.string(forKey: "title")
+            self.emailAddressLabel.text = UserDefaults.standard.string(forKey: "email")
+            self.foundedDateLabel.text = "\(UserDefaults.standard.integer(forKey: "founded"))"
+            self.phoneNumberLabel.text = UserDefaults.standard.string(forKey: "phone")
+            self.addressNameLabel.text = UserDefaults.standard.string(forKey: "address")
+        self.nickLabel.text = UserDefaults.standard.string(forKey: "nick")
+    }
+    
+    func setUp() {
+        let image = try? UserDefaults.standard.string(forKey: "used")?.asUrl
+        print(image)
+        imageView.kf.setImage(with: image)
+    }
     
     func configure(){
-        let urlString = UserDefaults.standard.string(forKey: "used")!
+        let urlString = UserDefaults.standard.string(forKey: "used")
         print(urlString)
-      guard let url = URL(string: urlString) else {
+        guard let url = URL(string: urlString ?? "") else {
         return
       }
       URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
