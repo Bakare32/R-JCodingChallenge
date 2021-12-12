@@ -12,6 +12,7 @@ enum Route {
     
     case pl
     case competitions
+    case teamDetails
     
 
     
@@ -21,6 +22,8 @@ enum Route {
             return "v2/competitions/PL/teams"
         case .competitions:
             return "v2/competitions"
+        case .teamDetails:
+            return "v2/teams/57"
         }
     }
 }

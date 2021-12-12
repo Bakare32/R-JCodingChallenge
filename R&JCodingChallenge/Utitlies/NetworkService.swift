@@ -28,6 +28,11 @@ struct NetworkService {
         request(route: .competitions, method: .get, completion: completion)
     }
     
+    func getTeam (completion: @escaping(Result<APIResponse, Error>)-> Void) {
+        request(route: .teamDetails, method: .get, completion: completion)
+    }
+    
+    
     private func request<T: Decodable>(route: Route,
                                        method: Method,
                                        parameters: [String: Any]? = nil,
